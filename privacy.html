@@ -56,7 +56,7 @@
   <div class="wrap">
     <a class="back" href="./">&larr; All documents</a>
     <h2 class="doc">Privacy Policy</h2>
-    <p class="meta">Last updated: 7 August 2026 · capy.vision@gmail.com</p>
+    <p class="meta">Last updated: 13 August 2026 · capy.vision@gmail.com</p>
 
     <h3>1. Who we are</h3>
     <p>Capy ("Capy", "we", "us") is a mobile application developed by <strong>Yossi Gueta</strong> ("the Operator"), based in Rishon LeZion, Israel. Capy is an at-home visual-exercise companion designed to make daily vision-training routines more engaging.</p>
@@ -83,8 +83,10 @@
     </table>
     <p>We <strong>do not</strong> collect: payment data (handled by Apple), precise location, contacts, photos from your gallery (other than a profile picture you actively choose), microphone audio, advertising identifiers, behavioural advertising data, or HealthKit data without explicit consent. We do not sell data. We do not use third-party trackers or analytics SDKs beyond crash reporting.</p>
 
-    <h3>4. The camera — processed on device, never uploaded</h3>
-    <p>Capy may use the front camera to estimate the distance between the user's face and the screen so exercises calibrate correctly. <strong>Camera frames are processed entirely on the device using Apple's on-device Vision framework. No camera image, video, frame, or face data ever leaves the device. Nothing is uploaded. Nothing is stored.</strong> Only a single number — the estimated distance in centimetres — is used in real time and then discarded.</p>
+    <h3>4. The camera and ARKit — processed on device, never uploaded</h3>
+    <p>Capy may use the front camera and Apple's <strong>ARKit Face Tracking (TrueDepth)</strong> API to estimate the distance between the user's face and the screen, and in some exercises the point on the screen the user is looking at.</p>
+    <p><strong>All processing happens on the device.</strong> The app reads exactly two values from <code>ARFaceAnchor</code> — <strong>a distance in millimetres and a gaze point in screen coordinates</strong> — and does not read, retain or transmit any face mesh, depth map, image, video or camera frame. <strong>No face data ever leaves the device, is uploaded to any server, or is shared with any third party.</strong></p>
+    <p><strong>What is stored, locally only:</strong> the screen-calibration coefficients (eight numbers that map gaze to screen coordinates) and the most recently measured distance in centimetres. <strong>These are mathematical parameters, not biometric data</strong> — a face cannot be reconstructed from them. They are removed when the app is deleted.</p>
 
     <h3>5. Where data is stored</h3>
     <p>Account and exercise data are stored on <strong>Supabase infrastructure hosted in the European Union (Frankfurt, Germany)</strong> under a Data Processing Addendum compliant with GDPR Article 28 and Standard Contractual Clauses. Israel benefits from an EU adequacy decision (renewed January 2024).</p>
